@@ -10,3 +10,6 @@ var timer = setInterval(function(){
 },2000);
  */     
 console.log(__dirname);
+console.log(__filename);
+
+//require, exports are other global objects
