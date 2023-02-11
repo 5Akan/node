@@ -1,35 +1,36 @@
 //GLOBAL OBJECTS
-/**
- * 
-let time = 0;
+// let time = 0;
 
-var timer = setInterval(function(){
-    time+=2;
-    console.log(time + ' Seconds have passed');
-    if (time>5) {
-        clearInterval(timer);
-    }
-},2000);
+// var timer = setInterval(function(){
+//     time+=2;
+//     console.log(time + ' Seconds have passed');
+//     if (time>5) {
+//         clearInterval(timer);
+//     }
+// },2000);
  
-console.log(__dirname);
-console.log(__filename);
-require, exports are other global objects
- */
+// console.log(__dirname);
+// console.log(__filename);
+// require, exports are other global objects
+ 
 
-//FUNCTION EXPRESSIONS(Modules)
+  //FUNCTION EXPRESSIONS(Modules)
 
-// var sayBye = function (params) {//function expression
-//     console.log('bye');
-// }
+  // var sayBye = function (params) {//function expression
+  //     console.log('bye');
+  // }
 
-// sayBye();
+  // sayBye();
 
-//Call a function with another function
-function callFunction(fun) {
-    fun();
-}
-var sayHello = function (params) {
-    console.log('hello');
-}
+  //Call a function with another function
+  // function callFunction(fun) {
+  //     fun();
+  // }
+  // var sayHello = function (params) {
+  //     console.log('hello');
+  // }
 
-callFunction(sayHello);
+  // callFunction(sayHello);
+
+//MODULES AND REQUIRE()
+
