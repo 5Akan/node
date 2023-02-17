@@ -34,3 +34,6 @@
 
 //MODULES AND REQUIRE()
 
+var counter = require('./count');//The variable 'counter is a reference to the counter funtion in count.js'
+
+console.log(counter(['Akanimoh','Jenna Ortega']));
