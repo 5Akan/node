@@ -1,5 +1,5 @@
 //Module Patterns
-var counter = function(arr){
+var counter = function(arr){ //OR replace var counter with module.exports.counter instead of first method
     return 'There are ' + arr.length + ' elements in this array';
 }
 var adder = function(a,b){
@@ -8,9 +8,12 @@ var adder = function(a,b){
 
 var pi = 3.142;
 
-module.exports.counter = counter;
-module.exports.adder = adder;
-module.exports.pi = pi;
+//Last way is this
+module.exports = {
+    counter:counter,
+    adder:adder,
+    pi:pi
+};
 //module.export is an empty object
 //When we add .counter it becomes a property of the object
 //The counter property inside the object is now equal to the counter function 
