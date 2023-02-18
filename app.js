@@ -39,9 +39,30 @@
 // console.log(counter(['Akanimoh','Jenna Ortega']));
 
 //Module Patterns
-var stuff = require('./stuff');
+// var stuff = require('./stuff');
 
-console.log(stuff.counter(['Akanimoh','Jenna Ortega']));
-console.log(stuff.adder(4,5));
-console.log(stuff.adder(stuff.pi,4));
+// console.log(stuff.counter(['Akanimoh','Jenna Ortega']));
+// console.log(stuff.adder(4,5));
+// console.log(stuff.adder(stuff.pi,4));
 
+//Event Module
+//Event Module is one of the core modules built into node js
+var events = require('events');
+//Events module returns a lot of things
+//one of the things is an event emmitter 
+//EE is used in node js to create custom events and
+//react to those events when they are emmitted
+
+//Prototype of Event Emitter
+// element.on('click', function(){//Tutorial no8 mins 2:10
+  
+// })
+
+
+var myEmitter = new events.eventEmitter();
+
+myEmitter.on('someEvent', function(mssg){
+  console.log(mssg);
+});
+
+myEmitter.emit('someEvent');
