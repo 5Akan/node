@@ -61,8 +61,13 @@ var events = require('events');
 
 var myEmitter = new events.eventEmitter();
 
-myEmitter.on('someEvent', function(mssg){
-  console.log(mssg);
-});
+// myEmitter.on('someEvent', function(mssg){
+//   console.log(mssg);
+// });
 
-myEmitter.emit('someEvent');
+// myEmitter.emit('someEvent', 'the event was emitted');
+
+//UTILITY MODULE
+//Utility module allows us to inherit things from objects 
+//built into node js
+var util = require('util');
