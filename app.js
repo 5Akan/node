@@ -71,3 +71,10 @@ var myEmitter = new events.eventEmitter();
 //Utility module allows us to inherit things from objects 
 //built into node js
 var util = require('util');
+
+var Person = function(name){
+  this.name = name;
+};
+
+util.inherits(Person, events.eventEmitter);
+//The person function inherits the things from
