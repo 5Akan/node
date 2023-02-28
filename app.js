@@ -78,3 +78,15 @@ var Person = function(name){
 
 util.inherits(Person, events.eventEmitter);
 //The person function inherits the things from
+
+var Akanimoh = new Person('Akanimoh');
+var Milly = new Person('Milly');
+var Jenna = new Person('Jenna');
+
+var People = [Akanimoh,Milly,Jenna];
+
+People.forEach(function (person){
+    person.on('speak', function (mssg) {
+      console.log(person.name + 'said' + mssg);
+    });
+})
