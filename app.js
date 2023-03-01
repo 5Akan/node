@@ -70,27 +70,34 @@
 //UTILITY MODULE
 //Utility module allows us to inherit things from objects 
 //built into node js
-var events = require('events');
-var util = require('util');
+// var events = require('events');
+// var util = require('util');
 
-var Person = function(name){//Object constructor
-  this.name = name;
-};
+// var Person = function(name){//Object constructor
+//   this.name = name;
+// };
 
-util.inherits(Person, events.EventEmitter);
-//The person function inherits the things from
+// util.inherits(Person, events.EventEmitter);
+// //The person function inherits the things from
 
-var Akanimoh = new Person('Akanimoh');
-var Milly = new Person('Milly');
-var Jenna = new Person('Jenna');
+// var Akanimoh = new Person('Akanimoh');
+// var Milly = new Person('Milly');
+// var Jenna = new Person('Jenna');
 
-var People = [Akanimoh,Milly,Jenna];
+// var People = [Akanimoh,Milly,Jenna];
 
-People.forEach(function (person){
-    person.on('speak', function (mssg) {
-      console.log(person.name + ' said: ' + mssg);
-    });
-});
+// People.forEach(function (person){
+//     person.on('speak', function (mssg) {
+//       console.log(person.name + ' said: ' + mssg);
+//     });
+// });
 
-Akanimoh.emit('speak', 'where is Milly?');
-Milly.emit('speak', 'I am behind you, silly!');
+// Akanimoh.emit('speak', 'where is Milly?');
+// Milly.emit('speak', 'I am behind you, silly!');
+
+//Reading and Writing Files
+var fs = require('fs');//Module for reading and writing
+
+fs.readFileSync('readme');
+//Sychronous method of reading i.e The fs will read the file before it will run any code below
+
