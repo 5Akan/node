@@ -47,7 +47,7 @@
 
 //Event Module
 //Event Module is one of the core modules built into node js
-var events = require('events');
+//var events = require('events');
 //Events module returns a lot of things
 //one of the things is an event emmitter 
 //EE is used in node js to create custom events and
@@ -59,7 +59,7 @@ var events = require('events');
 // })
 
 
-var myEmitter = new events.eventEmitter();
+//var myEmitter = new events.eventEmitter();
 
 // myEmitter.on('someEvent', function(mssg){
 //   console.log(mssg);
@@ -70,13 +70,14 @@ var myEmitter = new events.eventEmitter();
 //UTILITY MODULE
 //Utility module allows us to inherit things from objects 
 //built into node js
+var events = require('events');
 var util = require('util');
 
-var Person = function(name){
+var Person = function(name){//Object constructor
   this.name = name;
 };
 
-util.inherits(Person, events.eventEmitter);
+util.inherits(Person, events.EventEmitter);
 //The person function inherits the things from
 
 var Akanimoh = new Person('Akanimoh');
@@ -87,6 +88,9 @@ var People = [Akanimoh,Milly,Jenna];
 
 People.forEach(function (person){
     person.on('speak', function (mssg) {
-      console.log(person.name + 'said' + mssg);
+      console.log(person.name + ' said: ' + mssg);
     });
-})
+});
+
+Akanimoh.emit('speak', 'where is Milly?');
+Milly.emit('speak', 'I am behind you, silly!');
