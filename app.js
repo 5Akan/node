@@ -98,6 +98,6 @@
 //Reading and Writing Files
 var fs = require('fs');//Module for reading and writing
 
-fs.readFileSync('readme');
+var readMe = fs.readFileSync('readme.txt','utf8');
 //Sychronous method of reading i.e The fs will read the file before it will run any code below
-
+fs.writeFileSync('writeme.txt', readMe);
