@@ -96,8 +96,23 @@
 // Milly.emit('speak', 'I am behind you, silly!');
 
 //Reading and Writing Files
-var fs = require('fs');//Module for reading and writing
+// var fs = require('fs');//Module for reading and writing
 
-var readMe = fs.readFileSync('readme.txt','utf8');
-//Sychronous method of reading i.e The fs will read the file before it will run any code below
-fs.writeFileSync('writeme.txt', readMe);
+// var readMe = fs.readFileSync('readme.txt','utf8');
+// //Sychronous method of reading i.e The fs will read the file before it will run any code below
+// fs.writeFileSync('writeme.txt', readMe);
+// //Sychronous method of writiing
+
+var fs = require('fs');
+
+fs.readFile(function(err,data){
+  // console.log(data);
+  
+ fs.writeFile('fresh.txt',data);
+
+  //The write is in the function so that the file is 
+  //fully read first before it is written in the other file
+},'readme.txt','utf8');
+//Because the above is asychnromous  we need a call back function to fire when the process is complete
+//It doesnt stop the code below from runnimg
+
