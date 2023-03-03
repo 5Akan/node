@@ -105,14 +105,14 @@
 
 var fs = require('fs');
 
-fs.readFile(function(err,data){
+fs.readFile('readme.txt','utf8', function(err,data){
   // console.log(data);
   
- fs.writeFile('fresh.txt',data);
+ fs.writeFile('fresh.txt',data,function(err,data){});
 
   //The write is in the function so that the file is 
   //fully read first before it is written in the other file
-},'readme.txt','utf8');
+});
 //Because the above is asychnromous  we need a call back function to fire when the process is complete
 //It doesnt stop the code below from runnimg
 
