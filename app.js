@@ -126,9 +126,21 @@ var fs = require('fs');
   //   }
   // });
 //Synchronously Creating Directory
-   fs.mkdirSync('new');
+  // fs.mkdirSync('new');
 //Synchronously Deleting Directory
   // fs.rmdirSync('new'); 
 
 //Asynchronously Creating Directory
-//Asynchronously Creating Directory
+  // fs.mkdir('new',function () {
+  //   fs.readFile('readme.txt','utf8',function(err,data) {
+  //     fs.writeFile('./new/writeme.txt',data,function(err,data) {});
+  //   })
+  // });
+
+//Asynchronously Deleting Directory
+  //To remove the file first
+   fs.unlink('./new/writeme.txt',function () {
+    //To then remove the directory
+    fs.rmdir('new',function () {});
+   });
+  
