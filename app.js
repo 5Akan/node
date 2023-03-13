@@ -120,8 +120,15 @@ var fs = require('fs');
 
 //CREATING AND REMOVING DIRECTORIES
 //Deleting files using unlink
-fs.unlink("fresh.txt",function(err){//Still needs a call back function
-  if (err) {
-    throw err;
-  }
-});
+  // fs.unlink("fresh.txt",function(err){//Still needs a call back function
+  //   if (err) {
+  //     throw err;
+  //   }
+  // });
+//Synchronously Creating Directory
+   fs.mkdirSync('new');
+//Synchronously Deleting Directory
+  // fs.rmdirSync('new'); 
+
+//Asynchronously Creating Directory
+//Asynchronously Creating Directory
