@@ -139,8 +139,22 @@ var fs = require('fs');
 
 //Asynchronously Deleting Directory
   //To remove the file first
-   fs.unlink('./new/writeme.txt',function () {
-    //To then remove the directory
-    fs.rmdir('new',function () {});
-   });
+  //  fs.unlink('./new/writeme.txt',function () {
+  //   //To then remove the directory
+  //   fs.rmdir('new',function () {});
+  //  });
   
+//CREATNG A SERVER
+  var http = require('http');
+  var server = http.createServer(function (req,res) {//Method to create Server
+    console.log('Request was made:' + req.url)
+    //Response Header carries addition info about what is sent so the 
+    //client understands what is sent ..like the header in html
+    //The response headers are Status and Content-Type
+    res.writeHead(200, {'Content-Type':'text/plain'}); //200 is the status,means everything is ok 
+    res.end('Hey Viewer');//this ends the response with the content type
+  });
+
+  //for the server to listen
+  server.listen(3000, '127.0.0.1');//3000 is the port number and the second is the IP address(local in this case)
+  console.log('Yo dawgs, now listening to port 3000');
